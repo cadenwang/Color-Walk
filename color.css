@@ -1,0 +1,120 @@
+
+
+/*--------------------------------------------------------------
+Header
+--------------------------------------------------------------*/
+.header-container {
+	display: inline-block;
+	width: 100%;
+}
+
+.header {
+	border: none;
+	color: purple;
+	background: none;
+	margin: 2px;
+	font-weight: 900;
+	cursor: pointer;
+}
+
+.header:hover {
+	color: black;
+}
+
+.header-left {
+
+	padding-left: 15px;
+	padding-right: 71%;
+	font-size: 15px;
+}
+
+.header-right {
+	text-align: left;
+	padding-right: 15px;
+	font-size: 12px;
+}
+
+
+/*------------------------------------------------------------
+  Grid
+-------------------------------------------------------------*/
+.container {
+	margin-top: 35px;
+	margin-bottom: 15px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 600px;
+	height: 400px;
+	background: white;
+	border: 2px solid gray;
+}
+
+.grid {
+	display: block;
+	float: left;
+	width: 20px;
+	height: 20px;
+	background: black;
+	border: none;
+	
+
+}
+
+/*-----------------------------------------------------------
+Selector Buttons
+------------------------------------------------------------*/
+.bottom {
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+
+}
+
+.selector {
+	margin: 5px;
+	width: 80px;
+	height: 60px;
+	border-radius: 8px;
+}
+
+.counter {
+	border: 2px solid gray;
+	margin: 5px;
+	width: 140px;
+	height: 56px;
+	text-align: center;
+	font-size: 50px;
+	border-radius: 8px;
+	color: white;
+	background: gray;
+}
+
+.yellow {
+	background: #ffff33;
+}
+
+.red {
+	background: #ff0066;
+}
+
+.purple {
+	background: #cc33ff;
+}
+
+.blue {
+	background: #00ccff;
+}
+
+.green {
+	background: #99ff99;
+}
+
+.gray {
+	background: gray;
+}
+
+
+
+
+
+

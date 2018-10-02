@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<script src=jquery.js></script>
+		<link rel="stylesheet" href="color.css" type="text/css">
+	</head>
+	
+	<body>
+		<header class=header-container>
+				<button class="header header-left">Color Walk</button>	
+				<button class="header header-right" name="Home">Home</button>
+				<button class="header header-right" name="Blog">Blog</button>
+				<button class="header header-right" name="Sign In">Sign In</button>
+				
+		
+		</header>
+		<section class="container">
+			<script>
+let colors = ['red', 'yellow', 'green', 'blue', 'purple']
+
+$(document).ready(function(){
+	$('<div class="grid 0 gray"></div>').appendTo($('.container'))
+	for (let i = 1; i < 600; i++) {
+		let generateColor = colors[Math.floor(Math.random() * colors.length)]
+		$('<div class="grid ' + i + ' ' + generateColor + '"></div>').appendTo($('.container'))
+	}
+	$('.selector').click(function() {
+		let count = +$('.counter').text();
+		$('.counter').text(count + 1);
+	})
+
+	$('.selector').click(function(action) {
+		let color = action.currentTarget.name;
+		$.each($('.gray'), function checkColors(direction, val) {
+			let index = +$(val).attr('class').split(' ')[1];
+			let right = index + 1;
+			let left = index - 1;
+			let up = index - 30;
+			let down = index + 30;
+			if ($('.' + index).hasClass('gray')) {
+				if ($('.' + (right)).hasClass(color)) {
+					$('.' + (right)).removeClass(color).addClass('gray');
+					val = '<div class="grid ' + (right) + ' gray"></div>';
+					checkColors(right, val);
+				}
+				if ($('.' + (down)).hasClass(color)) {
+					$('.' + (down)).removeClass(color).addClass('gray');
+					val = '<div class="grid ' + (down) + ' gray"></div>';
+					checkColors(down, val);
+				}
+				if ($('.' + (up)).hasClass(color)) {
+					$('.' + (up)).removeClass(color).addClass('gray');
+					val = '<div class="grid ' + (up) + ' gray"></div>';
+					checkColors(up, val);
+				}
+				if (index % 30 !== 0 && $('.' + (left)).hasClass(color)) {
+					$('.' + (left)).removeClass(color).addClass('gray');
+					val = '<div class="grid ' + (left) + ' gray"></div>';
+					checkColors(left, val);
+				}
+			}
+		})		
+	})
+})
+			</script>	
+		</section>
+		
+		<div class="bottom">
+			<div class="counter" name="gray">0</div>
+			<button class="selector" style="background:#00ccff" name="blue"></button>
+			<button class="selector" style="background:#99ff99" name="green"></button>
+			<button class="selector" style="background:#ff0066" name="red"></button>
+			<button class="selector" style="background:#cc33ff" name="purple"></button>
+			<button class="selector" style="background:#ffff33" name="yellow"></button>
+		</div>
+	</body>
+</html>
